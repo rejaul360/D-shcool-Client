@@ -1,0 +1,57 @@
+[
+    {
+        "img": "https://beeja.com/wp-content/uploads/2014/08/JH3I0052.jpg",
+        "name": "Bharatanatyam dance",
+        "instructor": "Rukmini Devi Arundale",
+        "enrolled_price": 99.99
+      },
+      {
+        "img": "https://media.timeout.com/images/103238690/image.jpg",
+        "name": "Hip hop",
+        "instructor": "Remo Disuza",
+        "enrolled_price": 98.99
+      },
+      {
+        "img": "https://t3.ftcdn.net/jpg/03/73/80/90/360_F_373809049_Oos2i52y5SNUSbchu63BbcZbcbrfEMdT.jpg",
+        "name": "Kathak dance",
+        "instructor": "Pandit Birju Maharaj",
+        "enrolled_price": 80.99
+      },
+      {
+        "img": "https://img.freepik.com/premium-photo/dancing-sportive-female-colorful-neon-light-expressive-contemporary-dance-studio-photography-with_236999-172.jpg",
+        "name": "contemporary",
+        "instructor": "Tiger Shroof",
+        "enrolled_price": 69.99
+      },
+      {
+        "img": "https://static01.nyt.com/images/2018/08/15/arts/15ODISSIDANCE-COMBO-print/15OSSIDANCE-COMBO-superJumbo.jpg",
+        "name": "Odissi dance",
+        "instructor": "Kelucharan Mohapatra",
+        "enrolled_price": 59.99
+      },
+
+      {
+        "img": "https://www.emotions.ae/wp-content/uploads/2019/05/kathak-dance-for-kids.jpg",
+        "name": "Kathakali dance",
+        "instructor": "Kalamandalam Gopi",
+        "enrolled_price": 59.99
+      },
+      {
+        "img": "https://upload.wikimedia.org/wikipedia/commons/0/00/Shinjini_kathak_dance_indian_classical_in_traditional_attire.jpg",
+        "name": "Beginner's Guide to Investing",
+        "instructor": "Robert Johnson",
+        "enrolled_price": 55.99
+      },
+      {
+        "img": "class10.jpg",
+        "name": "Beginner's Guide to Investing",
+        "instructor": "Robert Johnson",
+        "enrolled_price": 54.99
+      },
+      {
+        "img": "https://i2.wp.com/rotarynewsonline.org/wp-content/uploads/2019/05/image1.jpg?ssl=1",
+        "name": "Manipuri dance",
+        "instructor": "Guru Bipin Singh",
+        "enrolled_price": 50.99
+      }
+]
