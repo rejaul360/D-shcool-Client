@@ -13,6 +13,8 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Main/Dashboard";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
+import InstructorDashboard from "../Pages/Dashboard/InstructorDashboard/InstructorDashboard";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 
   export const router = createBrowserRouter([
     {
@@ -58,6 +60,14 @@ import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
         {
           path : 'Paymenthistory',
           element : <PaymentHistory></PaymentHistory>
+        }, 
+        {
+          path : 'instractordb',
+          element : <InstructorDashboard></InstructorDashboard>
+        }, 
+        {
+          path : 'admindb',
+          element : <AdminDashboard></AdminDashboard>
         }, 
       ]
     },

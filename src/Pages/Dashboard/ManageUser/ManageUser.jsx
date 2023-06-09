@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
+import { FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUser = () => {

@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 import SocialLogin from '../Sharde/SocialLogin/SocialLogin';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Registration = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -49,7 +50,9 @@ const Registration = () => {
     };
     return (
         <>
-                        
+                  <Helmet>
+                    <title>Summer Camp | Registration</title>
+                    </Helmet>      
             <div className="hero min-h-screen bg-base-200">
                 <div></div>
                 <div className="hero-content flex-col lg:flex-row-reverse">
