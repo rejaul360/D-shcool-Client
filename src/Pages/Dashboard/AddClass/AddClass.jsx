@@ -12,18 +12,15 @@ const AddClass = () => {
         const form = event.target;
 
         const name = form.name.value;
-        const quantity = form.quantity.value;
+        const set = form.set.value;
         const postedBy = form.postedBy.value;
-        const salername = form.salername.value;
+        const instractor = form.instractor.value;
         const price = form.price.value;
-        const rating = form.rating.value;
-        const category = form.category.value;
-        const description = form.description.value;
         const photo = form.image.value;
 
 
 
-        const addclass = { name, quantity, salername, price,category,  description, photo,postedBy,rating }
+        const addclass = { name, set, instractor, price,   photo,postedBy }
 
         console.log(addclass);
 
@@ -41,7 +38,7 @@ const AddClass = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Toy Added Successfully',
+                        text: 'Class Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Done'
                     })
@@ -78,7 +75,7 @@ const AddClass = () => {
                             <span className="label-text">Available set</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="quantity" placeholder="Available set" className="input input-bordered w-full" />
+                            <input type="number" name="set" placeholder="Available set" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -89,7 +86,7 @@ const AddClass = () => {
                             <span className="label-text">Instractor name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="salername" placeholder="Instractor name" className="input input-bordered w-full" defaultValue={user?.displayName} />
+                            <input type="text" name="instractor" placeholder="Instractor name" className="input input-bordered w-full" defaultValue={user?.displayName} />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -104,7 +101,7 @@ const AddClass = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Price</span>
+                            <span className="label-text">Price $</span>
                         </label>
                         <label className="input-group">
                             <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" />

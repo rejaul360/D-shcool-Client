@@ -29,12 +29,12 @@ const PopularClass = () => {
                 dances?.slice(0,6).map((item) => (
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src={item.img} alt="Shoes" className="rounded-xl" />
+                            <img src={item.photo} alt="Shoes" className="rounded-xl" />
                         </figure>
                         <div className="card-body  ">
                             <p className='text-xl font-bold'>Name :{item.name}</p>
-                            <h4 className="card-title"> Instractor : {item.instructor}</h4>
-                            <p className=' font-bold'>Enroll Price : ${item.enrolled_price}</p>
+                            {/* <h4 className="card-title"> Instractor : {item.instructor}</h4>
+                            <p className=' font-bold'>Enroll Price : ${item.enrolled_price}</p> */}
                         </div>
                     </div>
                 ))
