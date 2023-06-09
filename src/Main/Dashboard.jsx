@@ -33,50 +33,31 @@ const Dashboard = () => {
 
                         {
                             isAdmin ? (<div>
-                                <li><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
+                                <h1 className='font-bold text-2xl py-4'>Admin Dashboard</h1>
+                                <div className="divider"></div>
+                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
+                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
                             </div>)
                                 :
                                 isInstractor ? (<div>
-                                    <li><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Add Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Add feedback</NavLink></li>
+                                    <h1 className='font-bold text-2xl py-4'>Instractor Dashboard</h1>
+                                    <div className="divider"></div>
+                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/addclass"><FaHome></FaHome> Add Class</NavLink></li>
+                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/myclass"><FaCheckCircle></FaCheckCircle> My Classes</NavLink></li>
                                 </div>) :
                                     (<div>
                                         <>
-                                            <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                                            <li><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
-                                            <li><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
-                                            <li><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
+                                            <h1 className='font-bold text-2xl py-4'>Student Dashboard</h1>
+                                            <div className="divider"></div>
+                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
+                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
+                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
                                         </>
                                     </div>)
                         }
 
-
-                        {/* {
-                            isAdmin ? (<div> <>
-                                <li><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
-                            </>
-                            </div>)
-
-
-
-                                (<div> <>
-                                    <li><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
-                                    <li><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
-                                </>
-                                </div>)
-                                :
-                                <>
-                                    <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                                    <li><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
-                                    <li><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
-                                    <li><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
-                                </>
-                        } */}
-
                         <div className="divider"></div>
-                        <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
+                        <li className='font-semibold text-xl'><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
                     </ul>
 
                 </div>
