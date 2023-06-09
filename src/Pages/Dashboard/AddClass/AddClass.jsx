@@ -20,7 +20,7 @@ const AddClass = () => {
 
 
 
-        const addclass = { name, set, instractor, price,   photo,postedBy }
+        const addclass = { name, set, instractor, price,   photo,postedBy, status: 'pending', }
 
         console.log(addclass);
 
@@ -107,36 +107,7 @@ const AddClass = () => {
                             <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    {/* <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Rating</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full" />
-                        </label>
-                    </div> */}
                 </div>
-                {/* <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
-                    <label className="label">
-                            <span className="label-text">Category</span>
-                        </label>
-                        <select name='category' className="select select-bordered w-full  ">
-                            <option value='Cricket'>Cricket</option>
-                            <option value='Football'>Football</option>
-                            <option value='Basketball'>Basketball</option>
-                        </select>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Details</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="description" placeholder="Details" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div> */}
-
                 <input type="submit" value="Add Class" className="btn btn-primary w-full" />
 
             </form>
