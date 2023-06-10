@@ -8,12 +8,13 @@ const MyClass = () => {
     const {user} = useContext(AuthContext)
     console.log(user.email); 
     useEffect(() => {
-        fetch(`http://localhost:5000/class?postedBy=${user?.email}`)
+        if(user){
+            fetch(`http://localhost:5000/myclass/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOnlymy(data)
-
             })
+        }
     }, [user])
     console.log(onlymy);
 
