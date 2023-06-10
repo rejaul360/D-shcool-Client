@@ -33,7 +33,7 @@ const Payment = () => {
             <div>
             <h1 className='text-center text-4xl font-bold text-cyan-500  mb-6 ' >Please Pay </h1>
             </div>
-            <h2>Taka poysa aitace re baba</h2>
+            <h2 className='text-pink-600 text-2xl'> Total Price : ${price}</h2>
             <Elements stripe={stripePromise}>  
                <CheckoutForm onlymy={onlymy}  price={price}></CheckoutForm>
             </Elements>

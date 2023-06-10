@@ -80,11 +80,11 @@ const CheckoutForm = ({ onlymy ,price }) => {
                 transactionId: paymentIntent.id,
                 price,
                 date: new Date(),
-                quantity: onlymy.length,
-                onlymyItems: onlymy.map(item => item._id),
-                menuItems: onlymy.map(item => item.menuItemId),
-                status: 'service pending',
-                itemNames: onlymy.map(item => item.name)
+                TotalClass: onlymy.length,
+                onlymyClass: onlymy.map(item => item._id),
+                Class: onlymy.map(item => item.classId),
+                status: 'Booked  class',
+                ClassNames: onlymy.map(item => item.name)
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
