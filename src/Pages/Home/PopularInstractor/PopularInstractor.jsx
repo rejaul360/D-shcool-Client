@@ -18,7 +18,7 @@ const PopularInstractor = () => {
     const teachers = instractors.filter(item => item.role === 'instractor');
     return (
         <div>
-        <div className='my-8 '>
+        <div className='my-8 md:mx-8'>
 
             <div className='py-6'>
                 <h1 className='text-center font-bold text-3xl'>Our Popular </h1>

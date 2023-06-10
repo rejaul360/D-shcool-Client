@@ -20,7 +20,7 @@ const AddClass = () => {
 
 
 
-        const addclass = { name, set: parseFloat(set), instractor, price: parseFloat(price),   photo,postedBy, status: 'pending', }
+        const addclass = { name, set: parseFloat(set), instractor, price: parseFloat(price),   photo,postedBy, status:'pending', }
 
         console.log(addclass);
 

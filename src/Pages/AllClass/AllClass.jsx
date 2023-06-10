@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import useAdmin from '../../Hooks/useAdmin';
+import Instractor from '../Instractor/Instractor';
+import useInstractor from '../../Hooks/useInstractor';
 
 const AllClass = () => {
     const {user} = useContext(AuthContext)
@@ -12,6 +16,55 @@ const AllClass = () => {
 
             })
     }, [user])
+
+    console.log(dances);
+
+    const [isAdmin] = useAdmin()
+    const [isInstractor] = useInstractor()
+
+    const handleSelectClass = item => {
+
+        console.log(item);
+        const { photo, name, price , _id } = item
+        if (user && user.email && !isAdmin && !isInstractor) {
+            const classItem = {classId: _id, name, photo, price: parseFloat(price), email: user.email}
+            console.log(classItem);
+            fetch('http://localhost:5000/selectclass', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(classItem)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        // refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Class is selected',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Please login to Select Class',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+              })
+        }
+    }
     return (
         <div className='my-8 '>
 
@@ -35,7 +88,11 @@ const AllClass = () => {
                                 <p className='font-bold'>Price : {item.price}</p>
                             </div>
                             <div className="card-actions justify-end mb-4 p-6">
-                                <button className="btn btn-primary">Select Class</button>
+                           {
+                            !isAdmin && !isInstractor ?  <button onClick={() => handleSelectClass(item)} className="btn btn-primary mt-4">Select Class</button> 
+                             :
+                              <button disabled onClick={() => handleSelectClass(item)} className="btn btn-primary mt-4">Select Class</button>
+                           }
                             </div>
                         </div>
                     ))
