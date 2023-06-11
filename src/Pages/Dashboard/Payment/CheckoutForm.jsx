@@ -81,9 +81,10 @@ const CheckoutForm = ({ onlymy ,price }) => {
                 price,
                 date: new Date(),
                 TotalClass: onlymy.length,
+                status: "Enrolled successfully",
                 onlymyClass: onlymy.map(item => item._id),
                 Class: onlymy.map(item => item.classId),
-                status: 'Booked  class',
+                // status: 'Booked  class',
                 ClassNames: onlymy.map(item => item.name)
             }
             axiosSecure.post('/payments', payment)
