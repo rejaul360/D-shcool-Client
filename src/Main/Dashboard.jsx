@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaHome, FaCheckCircle, FaWallet, FaEnvelopeOpenText } from 'react-icons/fa';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet,Link } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
 import useInstractor from '../Hooks/useInstractor';
+import { motion } from "framer-motion"
 
 
 const Dashboard = () => {
@@ -33,32 +34,83 @@ const Dashboard = () => {
 
                         {
                             isAdmin ? (<div>
+
                                 <h1 className='font-bold text-2xl py-4'>Admin Dashboard</h1>
                                 <div className="divider"></div>
-                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
-                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
-                              
+
+
+                                <motion.li
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
+                                </motion.li>
+                                <motion.li
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
+                                </motion.li>
                             </div>)
                                 :
                                 isInstractor ? (<div>
                                     <h1 className='font-bold text-2xl py-4'>Instractor Dashboard</h1>
                                     <div className="divider"></div>
-                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/addclass"><FaHome></FaHome> Add Class</NavLink></li>
-                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/myclass"><FaCheckCircle></FaCheckCircle> My Classes</NavLink></li>
+                                    <motion.li
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 0.5 }}
+                                    >
+                                        <li className='font-semibold text-xl'><NavLink to="/dashboard/addclass"><FaHome></FaHome> Add Class</NavLink></li>
+                                    </motion.li>
+                                    <motion.li
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 0.5 }}
+                                    >
+                                        <li className='font-semibold text-xl'><NavLink to="/dashboard/myclass"><FaCheckCircle></FaCheckCircle> My Classes</NavLink></li>
+                                    </motion.li>
                                 </div>) :
                                     (<div>
                                         <>
                                             <h1 className='font-bold text-2xl py-4'>Student Dashboard</h1>
                                             <div className="divider"></div>
-                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
-                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
-                                            <li className='font-semibold text-xl'><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
+                                            <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 0.5 }}
+                                            >
+                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
+                                            </motion.li>
+
+                                            <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 0.5 }}
+                                            >
+                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
+                                            </motion.li>
+                                            <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 0.5 }}
+                                            >
+                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
+                                            </motion.li>
                                         </>
                                     </div>)
                         }
-
                         <div className="divider"></div>
-                        <li className='font-semibold text-xl'><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
+                        <motion.li
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <li className='font-semibold text-xl'><Link to="/"><FaHome></FaHome> Home</Link> </li>
+                        </motion.li>
+
                     </ul>
 
                 </div>

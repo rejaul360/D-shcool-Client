@@ -70,8 +70,8 @@ const Navbar = () => {
                         </>
                     }
                    <span>{user?.photoURL ?
-                        <div className="tooltip tooltip-left tooltip-warning" data-tip={user?.displayName}>
-                            <img style={{ width: "45px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                        <div className="tooltip  tooltip-primary tooltip-animated" data-tip={user?.displayName}>
+                            <img style={{ width: "50px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
                         </div>
                         :
                         <FaUserCircle className='text-[25px] ml-4'></FaUserCircle>
