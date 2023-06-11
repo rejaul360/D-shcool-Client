@@ -4,6 +4,7 @@ import { FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUser = () => {
+    
     const {data: users = [], refetch} = useQuery(['users'], async () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json()

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import ShowModalFeedback from "./ShowModalFeedback";
 
 
 
@@ -34,6 +35,7 @@ const MyClass = () => {
                             <th>Price</th>
                             <th>Set</th>
                             <th>Status</th>
+                            <th>Feedback</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +50,8 @@ const MyClass = () => {
                                 <td>${my.price}</td>
                                 {/* <td>{toy.description}</td> */}
                                 <td>{my.set}</td>
-                                <td><button className="btn btn-primary">{my.status}</button></td>
+                                <td>{my.status}</td>
+                                <td>{<ShowModalFeedback></ShowModalFeedback>}</td>
                                 <td>
                                 </td>
                             </tr>

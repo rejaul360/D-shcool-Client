@@ -16,6 +16,7 @@ const PopularInstractor = () => {
     }, [user])
 
     const teachers = instractors.filter(item => item.role === 'instractor');
+    console.log(teachers);
     return (
         <div>
         <div className='my-8 md:mx-8'>
@@ -32,7 +33,7 @@ const PopularInstractor = () => {
                         <div className="card card-compact w-96 bg-base-100 shadow-xl">
                             <figure><img src={item.img} alt="Shoes" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">{item.name}</h2>
+                                <h2 className="card-title">Instractor Name : {item.name}</h2>
                                 <p>{item.email}</p>
                                 <div className="card-actions justify-end">
                                     

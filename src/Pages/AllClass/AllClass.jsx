@@ -2,22 +2,26 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAdmin from '../../Hooks/useAdmin';
-import Instractor from '../Instractor/Instractor';
+// import Instractor from '../Instractor/Instractor';
 import useInstractor from '../../Hooks/useInstractor';
 
 const AllClass = () => {
     const {user} = useContext(AuthContext)
-    const [dances, setDances] = useState()
+    const [dances, setDances] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/adminaproved')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => {
                 setDances(data)
+                console.log(setDances);
 
             })
     }, [user])
 
     console.log(dances);
+
+    const popularclass = dances.filter(item => item.status === 'approved');
+    console.log(popularclass);
 
     const [isAdmin] = useAdmin()
     const [isInstractor] = useInstractor()
@@ -75,7 +79,7 @@ const AllClass = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
 
                 {
-                    dances?.map((item) => (
+                    popularclass?.map((item) => (
                         <div className="card w-96 bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
                                 <img src={item.photo} alt="Shoes" className="rounded-xl" />
@@ -85,7 +89,7 @@ const AllClass = () => {
                                 <h2 className='text-xl font-semibold'>Instractor Name : {item.instractor}</h2>
                                 <p className=''>Email : {item.postedBy}</p>
                                 <p className='font-bold'>Set : {item.set}</p>
-                                <p className='font-bold'>Price : {item.price}</p>
+                                <p className='font-bold'>Price : ${item.price}</p>
                             </div>
                             <div className="card-actions justify-end mb-4 p-6">
                            {
