@@ -35,8 +35,9 @@ const Dashboard = () => {
                             isAdmin ? (<div>
                                 <h1 className='font-bold text-2xl py-4'>Admin Dashboard</h1>
                                 <div className="divider"></div>
-                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
                                 <li className='font-semibold text-xl'><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
+                                <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
+                              
                             </div>)
                                 :
                                 isInstractor ? (<div>

@@ -29,11 +29,12 @@ const EnrolledClass = () => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>TransactionId</th>
+                                <th>Classes Name</th>
                                 <th>Email</th>
                                 {/* <th>Instracto</th> */}
                                 <th>Total Class</th>
                                 <th>Total Price</th>
+                                <th>Status</th>
 
                                 {/* <th>Status</th> */}
                             </tr>
@@ -51,6 +52,7 @@ const EnrolledClass = () => {
                                     <td>{my.email}</td> 
                                     <td>{my.TotalClass}</td>
                                     <td>${my.price}</td>
+                                    <td>{my.status}</td>
 
                                     {/* <td>{my.status}</td> */}
 

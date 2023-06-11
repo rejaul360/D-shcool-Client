@@ -48,7 +48,7 @@ const MyClass = () => {
                                 <td>${my.price}</td>
                                 {/* <td>{toy.description}</td> */}
                                 <td>{my.set}</td>
-                                <td>{my.status}</td>
+                                <td><button className="btn btn-primary">{my.status}</button></td>
                                 <td>
                                 </td>
                             </tr>

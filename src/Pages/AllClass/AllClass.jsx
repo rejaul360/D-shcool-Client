@@ -9,7 +9,7 @@ const AllClass = () => {
     const {user} = useContext(AuthContext)
     const [dances, setDances] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('http://localhost:5000/adminaproved')
             .then(res => res.json())
             .then(data => {
                 setDances(data)
