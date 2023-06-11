@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const PaymentHistory = () => {
-    const[onlymy, setOnlymy] = useState([])
+    const[payment, setPayment] = useState([])
     const {user} = useContext(AuthContext)
     console.log(user.email); 
     useEffect(() => {
@@ -10,7 +10,7 @@ const PaymentHistory = () => {
             fetch(`http://localhost:5000/paymenthistory/${user.email}`)
             .then(res => res.json())
             .then(data => {
-                setOnlymy(data)
+                setPayment(data)
                 // console.log(data);
             })
         }
@@ -37,7 +37,7 @@ const PaymentHistory = () => {
                     </thead>
                     <tbody>
 
-                        {onlymy?.map((my, index) => (
+                        {payment?.map((my, index) => (
                             <tr>
                                 <td>{index + 1}</td>
                                 {/* <td>{my.instractor}</td> */}
