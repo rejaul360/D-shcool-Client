@@ -65,7 +65,8 @@ const Dashboard = () => {
                                     animate={{ scale: 1 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/manageuser"><FaCheckCircle></FaCheckCircle> Manage User</NavLink></li>
+                                    {/* <li className='font-semibold text-xl'></li> */}
+                                    <NavLink to="/dashboard/manageuser" className='font-semibold text-xl flex'><FaCheckCircle></FaCheckCircle> Manage User</NavLink>
                                 </motion.li>
                                 <motion.li
                                     initial={{ scale: 0 }}
