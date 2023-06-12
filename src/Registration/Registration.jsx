@@ -22,7 +22,7 @@ const Registration = () => {
                     .then(() => {
 
                         const saveUser = {name:data.name, img: data.photoURL, email: data.email}
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://summer-camp-server-rejaul360.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
