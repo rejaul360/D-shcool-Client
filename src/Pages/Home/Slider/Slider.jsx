@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const Slider = () => {
     return (
-        <div className='my-8'>
+        <div className='my-8 z-0'>
             <div >
                 <Carousel >
                     <div className='w-full lg:h-[600px]'>

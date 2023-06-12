@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAdmin from '../../Hooks/useAdmin';
-// import Instractor from '../Instractor/Instractor';
 import useInstractor from '../../Hooks/useInstractor';
+import { useNavigate } from 'react-router-dom';
 
 const AllClass = () => {
     const {user} = useContext(AuthContext)
     const [dances, setDances] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('http://localhost:5000/class')
             .then(res => res.json())
@@ -64,7 +65,7 @@ const AllClass = () => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                  navigate('/login', {state: {from: location}})
+                    navigate('/login', {state: {from: location}})
                 }
               })
         }

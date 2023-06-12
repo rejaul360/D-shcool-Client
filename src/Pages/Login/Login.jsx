@@ -136,7 +136,7 @@ return (
                             <input className="btn btn-primary text-xl" type="submit" value="Sign Up" />
                         </div>
                     </form>
-                    <p className='ml-8'><small>Already have an account <Link to="/login " className='text-red-600 font-bold '>Login</Link></small></p>
+                    <p className='ml-8'><small>Create an account <Link to="/singup " className='text-red-600 font-bold '>Registration</Link></small></p>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>

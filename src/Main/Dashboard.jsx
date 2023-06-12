@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHome, FaCheckCircle, FaWallet, FaEnvelopeOpenText } from 'react-icons/fa';
-import { NavLink, Outlet,Link } from 'react-router-dom';
+import { NavLink, Outlet, Link } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
 import useInstractor from '../Hooks/useInstractor';
 import { motion } from "framer-motion"
+import { AuthContext } from '../Provider/AuthProvider';
 
 
 const Dashboard = () => {
+
+    const { user } = useContext(AuthContext)
+    console.log(user);
 
     const [isAdmin] = useAdmin()
     const [isInstractor] = useInstractor()
@@ -36,9 +40,17 @@ const Dashboard = () => {
                             isAdmin ? (<div>
 
                                 <h1 className='font-bold text-2xl py-4'>Admin Dashboard</h1>
+
+                                <span className='text-center flex justify-center items-center'>
+                                    {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                        : ""
+                                    }</span>
+                                <div className='text-center font-bold'>
+                                    <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
+                                    <h1 className='text-xl'  >{user.displayName}</h1>
+                                </div>
+
                                 <div className="divider"></div>
-
-
                                 <motion.li
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
@@ -57,6 +69,14 @@ const Dashboard = () => {
                                 :
                                 isInstractor ? (<div>
                                     <h1 className='font-bold text-2xl py-4'>Instractor Dashboard</h1>
+                                    <span className='text-center flex justify-center items-center'>
+                                        {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                            : ""
+                                        }</span>
+                                    <div className='text-center font-bold'>
+                                        <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
+                                        <h1 className='text-xl'  >{user.displayName}</h1>
+                                    </div>
                                     <div className="divider"></div>
                                     <motion.li
                                         initial={{ scale: 0 }}
@@ -76,6 +96,14 @@ const Dashboard = () => {
                                     (<div>
                                         <>
                                             <h1 className='font-bold text-2xl py-4'>Student Dashboard</h1>
+                                            <span className='text-center flex justify-center items-center'>
+                                                {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                                    : ""
+                                                }</span>
+                                            <div className='text-center font-bold'>
+                                                <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
+                                                <h1 className='text-xl'  >{user.displayName}</h1>
+                                            </div>
                                             <div className="divider"></div>
                                             <motion.li
                                                 initial={{ scale: 0 }}
@@ -108,7 +136,7 @@ const Dashboard = () => {
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <li className='font-semibold text-xl'><Link to="/"><FaHome></FaHome> Home</Link> </li>
+                            <li className='font-semibold text-xl w-full'><Link to="/" className='w-full'><FaHome></FaHome> Home</Link> </li>
                         </motion.li>
 
                     </ul>
