@@ -15,20 +15,6 @@ const Navbar = () => {
             })
             .catch(error => console.log(error))
     }
-    // const [isAdmin] = useAdmin()
-    // const isAdmin = true
-    // console.log(isAdmin);
-    // const { user, logOut } = useContext(AuthContext)
-    // const[cart] = useCart()
-
-    // const handleLogOut = e => {
-    //     logOut()
-    //         .then(() => {
-
-    //          })
-    //         .catch(error => console.log(error))
-    // }
-
     const navOptions = <>
         <li className='font-bold '><Link to='/'>Home</Link></li>
         <li className='font-bold '><Link to='/class'>Classes</Link></li>
@@ -60,7 +46,7 @@ const Navbar = () => {
                 <div className="navbar-end" >
                     {user ?
                         <>
-                            <button onClick={handleLogout} className='btn btn-ghost capitalize'>Logout</button>
+                            <button onClick={handleLogout} className='btn btn-ghost capitalize mr-3'>Logout</button>
                         </> :
                         <>
                             <button className='mx-4 capitalize'><Link to='/singup'>Register</Link></button>

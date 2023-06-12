@@ -34,66 +34,6 @@ const Login = () => {
             })
     }
 
-
-    // createUser(data.email, data.password)
-    //     .then(result => {
-
-    //         const loggedUser = result.user;
-    //         console.log(loggedUser);
-
-    //         updateUserProfile(data.name, data.photoURL)
-    //             .then(() => {
-    //                 const saveUser = { name: data.name, email: data.email, img:data.photoURL }
-    //                 fetch('https://summer-camp-server-rejaul360.vercel.app/users',{
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'content-type' : 'application/json'
-    //                     },
-    //                     body: JSON.stringify(saveUser)
-    //                 })
-    //                     .then(res => res.json())
-    //                     .then(data => {
-    //                         if (data.insertedId) {
-    //                             // reset();
-    //                             Swal.fire({
-    //                                 position: 'top-end',
-    //                                 icon: 'success',
-    //                                 title: 'User created successfully.',
-    //                                 showConfirmButton: false,
-    //                                 timer: 1500
-    //                             });
-    //                             navigate('/');
-    //                         } 
-    //                     })
-    //             })
-    //             .catch(error => console.log(error))
-    //     })
-
-
-
-// const handleLogin = event => {
-//     event.preventDefault();
-//     const form = event.target;
-//     const email = form.email.value;
-//     const password = form.password.value;
-//     console.log(email, password);
-//     singIn(email, password)
-//         .then(result => {
-//             const user = result.user;
-//             console.log(user);
-//             Swal.fire({
-//                 title: ' Login Successful.',
-//                 showClass: {
-//                     popup: 'animate__animated animate__fadeInDown'
-//                 },
-//                 hideClass: {
-//                     popup: 'animate__animated animate__fadeOutUp'
-//                 }
-//             });
-//             navigate(from, { replace: true });
-//         })
-// }
-
 return (
 
     <>
