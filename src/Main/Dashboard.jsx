@@ -41,14 +41,23 @@ const Dashboard = () => {
 
                                 <h1 className='font-bold text-2xl py-4'>Admin Dashboard</h1>
 
-                                <span className='text-center flex justify-center items-center'>
-                                    {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
-                                        : ""
-                                    }</span>
-                                <div className='text-center font-bold'>
-                                    <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
-                                    <h1 className='text-xl'  >{user.displayName}</h1>
-                                </div>
+                                <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 1 }}
+                                            >
+                                                <span className='text-center flex justify-center items-center'>
+                                                    {user?.photoURL ? <img style={{ width: "80px", height: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                                        : ""
+                                                    }</span>
+                                                <div className=' font-bold'>
+                                                    <h1 className='text-2xl text-center' style={{ letterSpacing: "8px", textAlign:'center' }}>WELCOME</h1>
+                                                  
+                                                </div>
+                                                <div>
+                                                <h1 className='text-xl text-center'  >{user.displayName}</h1>
+                                                </div>
+                                            </motion.li>
 
                                 <div className="divider"></div>
                                 <motion.li
@@ -63,54 +72,81 @@ const Dashboard = () => {
                                     animate={{ scale: 1 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <li className='font-semibold text-xl'><NavLink to="/dashboard/manageclass"><FaHome></FaHome> Manage Classes</NavLink></li>
+                                    {/* <li className='font-semibold text-xl'></li> */}
+                                    <NavLink to="/dashboard/manageclass" className='font-semibold text-xl flex'><FaHome></FaHome> Manage Classes</NavLink>
                                 </motion.li>
                             </div>)
                                 :
                                 isInstractor ? (<div>
                                     <h1 className='font-bold text-2xl py-4'>Instractor Dashboard</h1>
-                                    <span className='text-center flex justify-center items-center'>
-                                        {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
-                                            : ""
-                                        }</span>
-                                    <div className='text-center font-bold'>
-                                        <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
-                                        <h1 className='text-xl'  >{user.displayName}</h1>
-                                    </div>
+                                    <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 1 }}
+                                            >
+                                                <span className='text-center flex justify-center items-center'>
+                                                    {user?.photoURL ? <img style={{ width: "80px", height: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                                        : ""
+                                                    }</span>
+                                                <div className=' font-bold'>
+                                                    <h1 className='text-2xl text-center' style={{ letterSpacing: "8px", textAlign:'center' }}>WELCOME</h1>
+                                                  
+                                                </div>
+                                                <div>
+                                                <h1 className='text-xl text-center'  >{user.displayName}</h1>
+                                                </div>
+                                            </motion.li>
                                     <div className="divider"></div>
                                     <motion.li
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
                                         transition={{ duration: 0.5 }}
                                     >
-                                        <li className='font-semibold text-xl'><NavLink to="/dashboard/addclass"><FaHome></FaHome> Add Class</NavLink></li>
+                                        {/* <li className='font-semibold text-xl'></li> */}
+                                        <NavLink to="/dashboard/addclass" className='font-semibold text-xl flex'><FaHome></FaHome> Add Class</NavLink>
                                     </motion.li>
                                     <motion.li
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
                                         transition={{ duration: 0.5 }}
                                     >
-                                        <li className='font-semibold text-xl'><NavLink to="/dashboard/myclass"><FaCheckCircle></FaCheckCircle> My Classes</NavLink></li>
+                                        {/* <li className='font-semibold text-xl'></li> */}
+                                        <NavLink to="/dashboard/myclass" className='font-semibold text-xl flex'><FaCheckCircle></FaCheckCircle> My Classes</NavLink>
                                     </motion.li>
                                 </div>) :
                                     (<div>
                                         <>
                                             <h1 className='font-bold text-2xl py-4'>Student Dashboard</h1>
-                                            <span className='text-center flex justify-center items-center'>
-                                                {user?.photoURL ? <img style={{ width: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
-                                                    : ""
-                                                }</span>
-                                            <div className='text-center font-bold'>
-                                                <h1 className='text-2xl' style={{ letterSpacing: "8px" }}>WELCOME</h1>
-                                                <h1 className='text-xl'  >{user.displayName}</h1>
-                                            </div>
+
+                                            <motion.li
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 1 }}
+                                            >
+                                                <span className='text-center flex justify-center items-center'>
+                                                    {user?.photoURL ? <img style={{ width: "80px", height: "80px", borderRadius: "50%" }} src={user?.photoURL} alt='' />
+                                                        : ""
+                                                    }</span>
+                                                <div className=' font-bold'>
+                                                    <h1 className='text-2xl text-center' style={{ letterSpacing: "8px", textAlign:'center' }}>WELCOME</h1>
+                                                  
+                                                </div>
+                                                <div>
+                                                <h1 className='text-xl text-center'  >{user.displayName}</h1>
+                                                </div>
+                                            </motion.li>
+
+
+
+
                                             <div className="divider"></div>
                                             <motion.li
                                                 initial={{ scale: 0 }}
                                                 animate={{ scale: 1 }}
                                                 transition={{ duration: 0.5 }}
                                             >
-                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/selected"><FaCheckCircle></FaCheckCircle> Selected Class</NavLink></li>
+                                                {/* <li className='font-semibold text-xl'></li> */}
+                                                <NavLink to="/dashboard/selected" className='font-semibold text-xl flex'><FaCheckCircle></FaCheckCircle> Selected Class</NavLink>
                                             </motion.li>
 
                                             <motion.li
@@ -118,14 +154,16 @@ const Dashboard = () => {
                                                 animate={{ scale: 1 }}
                                                 transition={{ duration: 0.5 }}
                                             >
-                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/enrolled"><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink></li>
+                                                {/* <li className='font-semibold text-xl'></li> */}
+                                                <NavLink to="/dashboard/enrolled" className='font-semibold text-xl flex'><FaEnvelopeOpenText></FaEnvelopeOpenText> Enrolled Class </NavLink>
                                             </motion.li>
                                             <motion.li
                                                 initial={{ scale: 0 }}
                                                 animate={{ scale: 1 }}
                                                 transition={{ duration: 0.5 }}
                                             >
-                                                <li className='font-semibold text-xl'><NavLink to="/dashboard/Paymenthistory"><FaWallet></FaWallet>Payment History</NavLink></li>
+                                                {/* <li className='font-semibold text-xl'></li> */}
+                                                <NavLink to="/dashboard/Paymenthistory" className='font-semibold text-xl flex'><FaWallet></FaWallet>Payment History</NavLink>
                                             </motion.li>
                                         </>
                                     </div>)
@@ -136,7 +174,8 @@ const Dashboard = () => {
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <li className='font-semibold text-xl w-full'><Link to="/" className='w-full'><FaHome></FaHome> Home</Link> </li>
+                            {/* <li className='font-semibold text-xl w-full border'></li> */}
+                            <NavLink to="/" className='font-semibold text-xl flex'><FaHome></FaHome> Home</NavLink> 
                         </motion.li>
 
                     </ul>
