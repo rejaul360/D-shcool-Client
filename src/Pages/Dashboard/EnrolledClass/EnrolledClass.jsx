@@ -7,7 +7,7 @@ const EnrolledClass = () => {
     console.log(user.email);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/paymenthistory/${user.email}`)
+            fetch(`https://summer-camp-server-rejaul360.vercel.app/paymenthistory/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setEnrolled(data)

@@ -20,7 +20,7 @@ const FeedbackModal = ({ my }) => {
 
          const addclass = {textValue}
 
-        fetch(`http://localhost:5000/addclass/${_id}`, {
+        fetch(`https://summer-camp-server-rejaul360.vercel.app/addclass/${_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const SelectedClass = () => {
     console.log(user.email); 
     useEffect(() => {
         if(user){
-            fetch(`http://localhost:5000/myselectedclass/${user.email}`)
+            fetch(`https://summer-camp-server-rejaul360.vercel.app/myselectedclass/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOnlymy(data)
@@ -32,7 +32,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myselectedclass/${_id}`, {
+                fetch(`https://summer-camp-server-rejaul360.vercel.app/myselectedclass/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

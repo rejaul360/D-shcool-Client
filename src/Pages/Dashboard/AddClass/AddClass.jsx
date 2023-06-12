@@ -25,7 +25,7 @@ const AddClass = () => {
         console.log(addclass);
 
         // send data to the server
-        fetch('http://localhost:5000/addclass', {
+        fetch('https://summer-camp-server-rejaul360.vercel.app/addclass', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

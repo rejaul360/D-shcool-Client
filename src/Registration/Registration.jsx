@@ -13,27 +13,26 @@ const Registration = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-
+        console.log(data);
         createUser(data.email, data.password)
             .then(result => {
-
                 const loggedUser = result.user;
                 console.log(loggedUser);
-
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email, img:data.photoURL }
-                        fetch('http://localhost:5000/users',{
+
+                        const saveUser = {name:data.name, img: data.photoURL, email: data.email}
+                        fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
-                                'content-type' : 'application/json'
+                                'content-type': 'application/json'
                             },
                             body: JSON.stringify(saveUser)
                         })
                             .then(res => res.json())
                             .then(data => {
                                 if (data.insertedId) {
-                                    // reset();
+                                    reset();
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
@@ -42,7 +41,7 @@ const Registration = () => {
                                         timer: 1500
                                     });
                                     navigate('/');
-                                } 
+                                }
                             })
                     })
                     .catch(error => console.log(error))

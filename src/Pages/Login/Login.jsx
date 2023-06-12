@@ -43,7 +43,7 @@ const Login = () => {
     //         updateUserProfile(data.name, data.photoURL)
     //             .then(() => {
     //                 const saveUser = { name: data.name, email: data.email, img:data.photoURL }
-    //                 fetch('http://localhost:5000/users',{
+    //                 fetch('https://summer-camp-server-rejaul360.vercel.app/users',{
     //                     method: 'POST',
     //                     headers: {
     //                         'content-type' : 'application/json'
@@ -133,7 +133,7 @@ return (
                             {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary text-xl" type="submit" value="Sign Up" />
+                            <input className="btn btn-primary text-xl" type="submit" value="Login" />
                         </div>
                     </form>
                     <p className='ml-8'><small>Create an account <Link to="/singup " className='text-red-600 font-bold '>Registration</Link></small></p>

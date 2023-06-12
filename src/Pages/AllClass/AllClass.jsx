@@ -10,7 +10,7 @@ const AllClass = () => {
     const [dances, setDances] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://summer-camp-server-rejaul360.vercel.app/class')
             .then(res => res.json())
             .then(data => {
                 setDances(data)
@@ -34,7 +34,7 @@ const AllClass = () => {
         if (user && user.email && !isAdmin && !isInstractor) {
             const classItem = {classId: _id, name, photo, price: parseFloat(price), email: user.email}
             console.log(classItem);
-            fetch('http://localhost:5000/selectclass', {
+            fetch('https://summer-camp-server-rejaul360.vercel.app/selectclass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

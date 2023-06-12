@@ -7,7 +7,7 @@ const PopularInstractor = () => {
     const [instractors, setInstractors] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://summer-camp-server-rejaul360.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setInstractors(data)

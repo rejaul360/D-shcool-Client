@@ -15,7 +15,7 @@ const Payment = () => {
     console.log(user.email); 
     useEffect(() => {
         if(user){
-            fetch(`http://localhost:5000/myselectedclass/${user.email}`)
+            fetch(`https://summer-camp-server-rejaul360.vercel.app/myselectedclass/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOnlymy(data)

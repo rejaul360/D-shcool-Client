@@ -7,7 +7,7 @@ import FeedbackModal from './FeedbackModal';
 const ManageClass = () => {
 
     const {data: users = [], refetch} = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/class')
+        const res = await fetch('https://summer-camp-server-rejaul360.vercel.app/class')
         return res.json()
     })
 
@@ -15,7 +15,7 @@ const ManageClass = () => {
     // const {user} = useContext(AuthContext)
 
     const handleApproved = my => {
-        fetch(`http://localhost:5000/class/approved/${my._id}`, {
+        fetch(`https://summer-camp-server-rejaul360.vercel.app/class/approved/${my._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -36,7 +36,7 @@ const ManageClass = () => {
     }
 
     const handleDeny = my => {
-        fetch(`http://localhost:5000/class/deny/${my._id}`, {
+        fetch(`https://summer-camp-server-rejaul360.vercel.app/class/deny/${my._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

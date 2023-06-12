@@ -7,7 +7,7 @@ const PopularClass = () => {
     const {user} = useContext(AuthContext)
     const [dances, setDances] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/class')
+        fetch('https://summer-camp-server-rejaul360.vercel.app/class')
             .then(res => res.json())
             .then(data => {
                 setDances(data)
