@@ -1,0 +1,17 @@
+.boderB {
+    border-bottom: 2px solid #04274f;
+}
+
+
+
+.border_bd {
+    border-radius: 1px 100px 1px 1px;
+    background-color: #021257;
+    transition:  2s ease, transform 2s ease; 
+    transform-origin: center; 
+}
+
+.border_bd:hover {
+    background-color: rgb(9, 35, 106);
+    transform: scale(1.1); 
+}

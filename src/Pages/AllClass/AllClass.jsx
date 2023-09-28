@@ -4,13 +4,14 @@ import Swal from 'sweetalert2';
 import useAdmin from '../../Hooks/useAdmin';
 import useInstractor from '../../Hooks/useInstractor';
 import { useNavigate } from 'react-router-dom';
+import"./AllClass.css"
 
 const AllClass = () => {
     const {user} = useContext(AuthContext)
     const [dances, setDances] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch('https://summer-camp-server-rejaul360.vercel.app/class')
+        fetch('https://summer-camp-server-ochre-six.vercel.app/class')
             .then(res => res.json())
             .then(data => {
                 setDances(data)
@@ -34,7 +35,8 @@ const AllClass = () => {
         if (user && user.email && !isAdmin && !isInstractor) {
             const classItem = {classId: _id, name, photo, price: parseFloat(price), email: user.email}
             console.log(classItem);
-            fetch('https://summer-camp-server-rejaul360.vercel.app/selectclass', {
+            
+            fetch('https://summer-camp-server-ochre-six.vercel.app/selectclass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -74,27 +76,27 @@ const AllClass = () => {
         <div className='my-8 '>
 
             <div>
-                <h1 className='text-center font-bold text-3xl'>Popular Dance </h1>
-                <div className="divider text-3xl font-bold">Class</div>
+                <h1 className='text-center font-bold text-4xl text-white'>All Class</h1>
+                <div className="divider text-3xl font-bold"></div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
 
                 {
                     popularclass?.map((item) => (
-                        <div className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card w-96 stylebd bg_style text-white shadow-xl" data-aos="zoom-in">
                             <figure className="px-10 pt-10">
-                                <img src={item.photo} alt="Shoes" className="rounded-xl" />
+                                <img src={item.photo} alt="Shoes" className="rounded-xl"  />
                             </figure>
                             <div className="card-body  space-y-0">
                                 <h1 className='text-xl font-semibold'>Class Name : {item.name}</h1>
-                                <h2 className='text-xl font-semibold'>Instractor Name : {item.instractor}</h2>
+                                <h2 className='text-xl font-semibold'>Instractor : {item.instractor}</h2>
                                 <p className=''>Email : {item.postedBy}</p>
                                 <p className='font-bold'>Set : {item.set}</p>
                                 <p className='font-bold'>Price : ${item.price}</p>
                             </div>
                             <div className="card-actions justify-end mb-4 p-6">
                            {
-                            !isAdmin && !isInstractor ?  <button onClick={() => handleSelectClass(item)} className="btn btn-primary mt-4">Select Class</button> 
+                            !isAdmin && !isInstractor ?  <button onClick={() => handleSelectClass(item)} className="btn btn-outline btn-info mt-4">Select Class</button> 
                              :
                               <button disabled onClick={() => handleSelectClass(item)} className="btn btn-primary mt-4">Select Class</button>
                            }

@@ -6,12 +6,12 @@ import Swal from 'sweetalert2';
 const ManageUser = () => {
     
     const {data: users = [], refetch} = useQuery(['users'], async () => {
-        const res = await fetch('https://summer-camp-server-rejaul360.vercel.app/users')
+        const res = await fetch('https://summer-camp-server-ochre-six.vercel.app/users')
         return res.json()
     }) 
 
     const handleMakeAdmin = user =>{
-        fetch(`https://summer-camp-server-rejaul360.vercel.app/users/admin/${user._id}`, {
+        fetch(`https://summer-camp-server-ochre-six.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -31,7 +31,7 @@ const ManageUser = () => {
     }
 
     const handleMakeInstractor = user =>{
-        fetch(`https://summer-camp-server-rejaul360.vercel.app/users/instractor/${user._id}`, {
+        fetch(`https://summer-camp-server-ochre-six.vercel.app/users/instractor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -51,13 +51,13 @@ const ManageUser = () => {
     }
 
     return (
-        <div className="w-full px-4">
+        <div className="w-full px-4 text-white">
 
         <h3 className="text-3xl font-semibold my-4">Total Users: {users.length}</h3>
         <div className="overflow-x-auto">
-            <table className="table table-zebra w-full">
+            <table className="table text-white w-full">
                 {/* head */}
-                <thead>
+                <thead className='text-white font-bold text-xl'>
                     <tr>
                         <th>#</th>
                         <th>Name</th>

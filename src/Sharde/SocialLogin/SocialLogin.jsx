@@ -21,7 +21,7 @@ const SocialLogin = () => {
             console.log(loggedUser);
       
             const saveUser = {name:loggedUser.displayName, img: loggedUser.photoURL, email: loggedUser.email}
-            fetch('https://summer-camp-server-rejaul360.vercel.app/users', {
+            fetch('https://summer-camp-server-ochre-six.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -38,7 +38,6 @@ const SocialLogin = () => {
     
     return (
         <div>
-            <div className="divider">OR</div>
             <div className='w-full text-center py-4'>
                 <button onClick={handleGoogleSingIn}>
                     {/* <FaGoogle></FaGoogle> */}

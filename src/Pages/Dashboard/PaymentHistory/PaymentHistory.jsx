@@ -7,7 +7,7 @@ const PaymentHistory = () => {
     console.log(user.email); 
     useEffect(() => {
         if(user){
-            fetch(`https://summer-camp-server-rejaul360.vercel.app/paymenthistory/${user.email}`)
+            fetch(`https://summer-camp-server-ochre-six.vercel.app/paymenthistory/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setPayment(data)
@@ -18,13 +18,13 @@ const PaymentHistory = () => {
     }, [user])
     return (
         <div className='h-full shadow py-8 p-5'>
-        <h1 className='text-center text-4xl font-bold text-cyan-500  mb-6 ' >My Payment History</h1>
+        <h1 className='text-center text-4xl font-bold  mb-6  text-cyan-500' >My Payment History</h1>
         <div>
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full ">
+                <table className="table  w-full ">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='text-white text-xl'>
                             <th>#</th>
                             <th>TransactionId</th>
                             <th>Email</th>
@@ -35,7 +35,7 @@ const PaymentHistory = () => {
                             {/* <th>Status</th> */}
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-white'>
 
                         {payment?.map((my, index) => (
                             <tr>

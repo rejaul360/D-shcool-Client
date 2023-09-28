@@ -25,7 +25,7 @@ const AddClass = () => {
         console.log(addclass);
 
         // send data to the server
-        fetch('https://summer-camp-server-rejaul360.vercel.app/addclass', {
+        fetch('https://summer-camp-server-ochre-six.vercel.app/addclass', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,14 +47,14 @@ const AddClass = () => {
             form.reset()
     }
     return (
-        <div className="bg-[#b8e9ec] p-24 rounded-3xl py-7 shadow-lg">
-            <h2 className="text-center text-4xl font-bold text-cyan-600  mb-6">Add Class</h2>
+        <div className="bg-[#020822] p-24 rounded-3xl py-7 shadow-lg">
+            <h2 className="text-center text-4xl font-bold  text-white  mb-6">Add Class</h2>
             <form onSubmit={handleAddClass}>
                 {/* form name and quantity row */}
                 <div className="mb-8">
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">Photo URL</span>
+                            <span className="label-text font-bold text-white">Photo URL</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="image" placeholder="Photo URL" className="input input-bordered w-full" />
@@ -64,7 +64,7 @@ const AddClass = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">name</span>
+                            <span className="label-text font-bold text-white">Name</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="name" placeholder="class name" className="input input-bordered w-full" />
@@ -72,7 +72,7 @@ const AddClass = () => {
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
-                            <span className="label-text">Available set</span>
+                            <span className="label-text font-bold text-white">Available set</span>
                         </label>
                         <label className="input-group">
                             <input type="number" name="set" placeholder="Available set" className="input input-bordered w-full" />
@@ -83,7 +83,7 @@ const AddClass = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Instractor name</span>
+                            <span className="label-text font-bold text-white">Instractor name</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="instractor" placeholder="Instractor name" className="input input-bordered w-full" defaultValue={user?.displayName} />
@@ -91,7 +91,7 @@ const AddClass = () => {
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text font-bold text-white">Email</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="postedBy" placeholder="Email" className="input input-bordered w-full" defaultValue={user?.email} />
@@ -101,14 +101,14 @@ const AddClass = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Price $</span>
+                            <span className="label-text font-bold text-white">Price $</span>
                         </label>
                         <label className="input-group">
                             <input type="number" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Class" className="btn btn-primary w-full" />
+                <input type="submit" value="Add Class" className="btn btn-outline btn-info w-full" />
 
             </form>
         </div>

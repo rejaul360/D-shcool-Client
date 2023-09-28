@@ -10,7 +10,7 @@ const SelectedClass = () => {
     console.log(user.email); 
     useEffect(() => {
         if(user){
-            fetch(`https://summer-camp-server-rejaul360.vercel.app/myselectedclass/${user.email}`)
+            fetch(`https://summer-camp-server-ochre-six.vercel.app/myselectedclass/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOnlymy(data)
@@ -32,7 +32,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://summer-camp-server-rejaul360.vercel.app/myselectedclass/${_id}`, {
+                fetch(`https://summer-camp-server-ochre-six.vercel.app/myselectedclass/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -58,18 +58,18 @@ const SelectedClass = () => {
 
     return (
 
-        <div className='h-full shadow py-8 p-5'>
+        <div className='h-full shadow py-8 p-5 text-white'>
         <h1 className='text-center text-4xl font-bold text-cyan-500  mb-6 ' >My Selected Class</h1>
 
         <div>
-            <Link to='/dashboard/payment'><button className='btn btn-primary mt-3 justify-end'>Pay</button></Link>
+            <Link to='/dashboard/payment'><button className='btn btn-outline btn-info px-12 mb-6 mt-3 justify-end'>Pay</button></Link>
         </div>
         <div>
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full ">
+                <table className="table w-full ">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='text-white text-xl'>
                             <th>#</th>
                             <th>img</th>
                             {/* <th>Instracto</th> */}
@@ -92,7 +92,7 @@ const SelectedClass = () => {
                                 <td>${my.price}</td>
 
                                 {/* <td>{my.status}</td> */}
-                                <button onClick={() => handleToyDelete(my._id)} className='btn btn-outline btn-error'>Delete</button>
+                                <button onClick={() => handleToyDelete(my._id)} className='btn btn-outline btn-error mt-3' >Delete</button>
                                
                                 <td>
                                 </td>

@@ -1,0 +1,18 @@
+.stylebd {
+    border: 2px solid #04274f;
+}
+
+.boderB {
+    border-bottom: 2px solid #04274f;
+}
+
+.bg_btn {
+    background-color: rgb(35, 35, 35);
+    outline: none;
+    color: white;
+    
+}
+.bg_btn :hover{
+    outline:  none;
+    border:  none;
+}

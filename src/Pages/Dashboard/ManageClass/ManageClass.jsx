@@ -7,7 +7,7 @@ import FeedbackModal from './FeedbackModal';
 const ManageClass = () => {
 
     const {data: users = [], refetch} = useQuery(['users'], async () => {
-        const res = await fetch('https://summer-camp-server-rejaul360.vercel.app/class')
+        const res = await fetch('https://summer-camp-server-ochre-six.vercel.app/class')
         return res.json()
     })
 
@@ -15,7 +15,7 @@ const ManageClass = () => {
     // const {user} = useContext(AuthContext)
 
     const handleApproved = my => {
-        fetch(`https://summer-camp-server-rejaul360.vercel.app/class/approved/${my._id}`, {
+        fetch(`https://summer-camp-server-ochre-six.vercel.app/class/approved/${my._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -36,7 +36,7 @@ const ManageClass = () => {
     }
 
     const handleDeny = my => {
-        fetch(`https://summer-camp-server-rejaul360.vercel.app/class/deny/${my._id}`, {
+        fetch(`https://summer-camp-server-ochre-six.vercel.app/class/deny/${my._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -67,9 +67,9 @@ const ManageClass = () => {
         <h1 className='text-center text-4xl font-bold text-cyan-500  mb-6 ' >Manage Class</h1>
         <div>
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full ">
+                <table className="table w-full ">
                     {/* head */}
-                    <thead>
+                    <thead className='font-bold text-xl text-white'>
                         <tr>
                             <th>#</th>
                             <th>img</th>
@@ -85,9 +85,9 @@ const ManageClass = () => {
                     <tbody>
 
                         {users?.map((my, index) => (
-                            <tr>
+                            <tr className='text-white'>
                                 <td>{index + 1}</td>
-                                <td><img style={{ width: "50px", height:"50px", borderRadius: "25%" }} src={my.photo} /></td>
+                                <td><img style={{ width: "150px", height:"50px", borderRadius: "10%" }} src={my.photo} /></td>
                                 
                                 <td>{my.instractor}</td>
                                 <td>{my.name}</td>

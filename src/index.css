@@ -4,9 +4,24 @@
 
 
 .drawer-side a.active {
-    color: white;
-    background-color: transparent;
-  }
-  .drawer-side a {
-    background-color: transparent;
-  }
+  color: white;
+  background-color: transparent;
+}
+
+.drawer-side a {
+  background-color: transparent;
+}
+
+.bg_colors {
+  background: linear-gradient(to bottom, #020617, #031152, #020617, #021150);
+
+}
+
+.boderB {
+  border-bottom: 2px solid #04274f;
+}
+
+body {
+  font-family: 'Josefin Slab', serif;
+
+}
